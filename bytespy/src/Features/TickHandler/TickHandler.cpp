@@ -273,9 +273,9 @@ void CTickshiftHandler::CLMoveFunc(float accumulated_extra_samples, bool bFinalT
 
 	m_bGoalReached = bFinalTick && m_iShiftedTicks == m_iShiftedGoal;
 
-	//if (CL_Move)
-	//	CL_Move->Call<void>(accumulated_extra_samples, bFinalTick);
-	F::Networking.CL_Move(accumulated_extra_samples, bFinalTick);
+	if (CL_Move)
+		CL_Move->Call<void>(accumulated_extra_samples, bFinalTick);
+	//F::Networking.CL_Move(accumulated_extra_samples, bFinalTick);
 }
 
 void CTickshiftHandler::CLMove(float accumulated_extra_samples, bool bFinalTick)
