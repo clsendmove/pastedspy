@@ -258,7 +258,7 @@ bool CTickshiftHandler::ValidWeapon(CTFWeaponBase* pWeapon) // wow this is retar
 
 void CTickshiftHandler::CLMoveFunc(float accumulated_extra_samples, bool bFinalTick)
 {
-	//static auto CL_Move = U::Hooks.m_mHooks["CL_Move"];
+	static auto CL_Move = U::Hooks.m_mHooks["CL_Move"];
 
 	m_iShiftedTicks--;
 	if (m_iShiftedTicks < 0)
